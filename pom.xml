@@ -78,7 +78,6 @@
           <version>1.8</version>
           <extensions>true</extensions>
           <configuration>
-            <filtering>true</filtering>
             <buildSmells>dependencies</buildSmells>
           </configuration>
       </plugin>
