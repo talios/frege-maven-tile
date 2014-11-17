@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.theoryinpractise.frege</groupId>
     <artifactId>frege-maven-tile</artifactId>
-    <packaging>tile</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <version>1.0.2-SNAPSHOT</version>
     <name>tiles-maven-plugin for frege-maven-plugin</name>
     <url>http://maven.apache.org</url>
     <description>Apache Maven Tile for the Frege Maven Plugin</description>
@@ -73,16 +73,40 @@
     <build>
       <plugins>
         <plugin>
-          <groupId>io.repaint.maven</groupId>
-          <artifactId>tiles-maven-plugin</artifactId>
-          <version>1.8</version>
-          <extensions>true</extensions>
-          <configuration>
-            <filtering>true</filtering>
-            <buildSmells>dependencies</buildSmells>
-          </configuration>
-      </plugin>
-    </plugins>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.5.1</version>
+            <configuration>
+                <preparationGoals>clean install</preparationGoals>
+                <goals>deploy</goals>
+                <pushChanges>false</pushChanges>
+                <localCheckout>true</localCheckout>
+                <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+            </configuration>
+        </plugin>
+        <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.9</version>
+                <executions>
+                    <execution>
+                        <id>add-tile</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>tile.xml</file>
+                                    <type>xml</type>
+                                    <classifier>tile-pom</classifier>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+                </plugins>
   </build>
 
 </project>
