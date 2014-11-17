@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.theoryinpractise.frege</groupId>
     <artifactId>frege-maven-tile</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0.2-SNAPSHOT</version>
     <name>tiles-maven-plugin for frege-maven-plugin</name>
     <url>http://maven.apache.org</url>
