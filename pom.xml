@@ -3,7 +3,7 @@
     <groupId>com.theoryinpractise.frege</groupId>
     <artifactId>frege-maven-tile</artifactId>
     <packaging>tile</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>tiles-maven-plugin for frege-maven-plugin</name>
     <url>http://maven.apache.org</url>
     <description>Apache Maven Tile for the Frege Maven Plugin</description>
@@ -72,6 +72,17 @@
 
     <build>
       <plugins>
+        <plugin>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.5.1</version>
+            <configuration>
+                <preparationGoals>clean install</preparationGoals>
+                <goals>deploy</goals>
+                <pushChanges>false</pushChanges>
+                <localCheckout>true</localCheckout>
+                <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+            </configuration>
+        </plugin>
         <plugin>
           <groupId>io.repaint.maven</groupId>
           <artifactId>tiles-maven-plugin</artifactId>
