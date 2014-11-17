@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.theoryinpractise.frege</groupId>
+    <artifactId>frege-maven-tile</artifactId>
+    <packaging>tile</packaging>
+    <version>1.0.1-SNAPSHOT</version>
+    <name>tiles-maven-plugin for frege-maven-plugin</name>
+    <url>http://maven.apache.org</url>
+    <description>Apache Maven Tile for the Frege Maven Plugin</description>
+    <scm>
+        <connection>scm:git:git@github.com:talios/frege-maven-tile.git</connection>
+        <developerConnection>scm:git:git@github.com:talios/frege-maven-tile.git</developerConnection>
+        <url>http://github.com/talios/frege-maven-tile</url>
+      <tag>HEAD</tag>
+  </scm>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <developers>
+        <developer>
+            <id>talios</id>
+            <name>Mark Derricutt</name>
+            <email>mark@talios.com</email>
+            <url>http://www.talios.com</url>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>Eclipse Public License</name>
+        </license>
+    </licenses>
+    <distributionManagement>
+        <repository>
+            <id>sonatype-staging</id>
+            <name>oss.sonatype.org Staging Repository</name>
+            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>github-snapshots</id>
+            <name>oss.sonatype.org github Release Repository Snapshot Repository</name>
+            <url>http://oss.sonatype.org/content/repositories/github-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>io.repaint.maven</groupId>
+          <artifactId>tiles-maven-plugin</artifactId>
+          <version>1.8</version>
+          <extensions>true</extensions>
+          <configuration>
+            <filtering>true</filtering>
+            <buildSmells>dependencies</buildSmells>
+          </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
+
