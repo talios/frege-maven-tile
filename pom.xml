@@ -3,7 +3,7 @@
     <groupId>com.theoryinpractise.frege</groupId>
     <artifactId>frege-maven-tile</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <name>tiles-maven-plugin for frege-maven-plugin</name>
     <url>http://maven.apache.org</url>
     <description>Apache Maven Tile for the Frege Maven Plugin</description>
@@ -11,7 +11,7 @@
         <connection>scm:git:git@github.com:talios/frege-maven-tile.git</connection>
         <developerConnection>scm:git:git@github.com:talios/frege-maven-tile.git</developerConnection>
         <url>http://github.com/talios/frege-maven-tile</url>
-      <tag>frege-maven-tile-1.0.2</tag>
+      <tag>HEAD</tag>
   </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
