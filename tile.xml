@@ -11,7 +11,7 @@
     <dependency>
       <groupId>com.theoryinpractise.frege</groupId>
       <artifactId>frege</artifactId>
-      <version>3.21.586-g026e8d7</version>
+      <version>3.22.324-g630677b</version>
     </dependency>
   </dependencies>
 
