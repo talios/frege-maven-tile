@@ -98,7 +98,7 @@
                             <artifacts>
                                 <artifact>
                                     <file>tile.xml</file>
-                                    <type>xml</type>
+                                    <type>tile</type>
                                     <classifier>tile-pom</classifier>
                                 </artifact>
                             </artifacts>
