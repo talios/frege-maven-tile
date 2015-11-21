@@ -9,9 +9,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.theoryinpractise.frege</groupId>
+      <groupId>org.frege-lang</groupId>
       <artifactId>frege</artifactId>
-      <version>3.22.324-g630677b</version>
+      <version>3.23.401-g7c45277</version>
     </dependency>
   </dependencies>
 
