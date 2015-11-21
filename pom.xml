@@ -2,9 +2,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.theoryinpractise.frege</groupId>
     <artifactId>frege-maven-tile</artifactId>
-    <packaging>jar</packaging>
-    <version>1.0.2-SNAPSHOT</version>
-    <name>tiles-maven-plugin for frege-maven-plugin</name>
+    <packaging>tile</packaging>
+    <version>1.0.5-SNAPSHOT</version>
+    <name>frege-maven-tile for frege-maven-plugin</name>
     <url>http://maven.apache.org</url>
     <description>Apache Maven Tile for the Frege Maven Plugin</description>
     <scm>
@@ -36,9 +36,9 @@
             <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
         <snapshotRepository>
-            <id>github-snapshots</id>
-            <name>oss.sonatype.org github Release Repository Snapshot Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/github-snapshots/</url>
+          <id>sonatype-snapshots</id>
+          <name>oss.sonatype.org github Release Repository Snapshot Repository</name>
+          <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <profiles>
@@ -74,7 +74,7 @@
       <plugins>
         <plugin>
             <artifactId>maven-release-plugin</artifactId>
-            <version>2.5.1</version>
+            <version>2.5.3</version>
             <configuration>
                 <preparationGoals>clean install</preparationGoals>
                 <goals>deploy</goals>
@@ -84,30 +84,15 @@
             </configuration>
         </plugin>
         <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.9</version>
-                <executions>
-                    <execution>
-                        <id>add-tile</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>attach-artifact</goal>
-                        </goals>
-                        <configuration>
-                            <artifacts>
-                                <artifact>
-                                    <file>tile.xml</file>
-                                    <type>xml</type>
-                                    <classifier>tile-pom</classifier>
-                                </artifact>
-                            </artifacts>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-                </plugins>
+          <groupId>io.repaint.maven</groupId>
+          <artifactId>tiles-maven-plugin</artifactId>
+          <version>2.5</version>
+          <extensions>true</extensions>
+          <configuration>
+            <buildSmells>dependencies</buildSmells>
+          </configuration>
+        </plugin>
+      </plugins>
   </build>
 
 </project>
-
